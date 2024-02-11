@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ReactNode, useEffect } from "react";
-import { Navbar } from "./Navbar";
+import { Navbar } from "@components/common/Navbar/index";
 import { theme } from "@styles/theme";
 
 interface LayoutProps {
@@ -31,6 +31,7 @@ export const Layout = ({ children, navbar }: LayoutProps) => {
 };
 
 const LayoutContainer = styled.div`
+  position: relative;
   width: 100%;
   max-width: 460px;
   height: 100vh;
@@ -46,4 +47,6 @@ const LayoutContainer = styled.div`
   }
   -ms-overflow-style: none; /* 인터넷 익스플로러 */
   scrollbar-width: none; /* 파이어폭스 */
+
+  border: 1px solid ${theme.colors.gray1};
 `;
