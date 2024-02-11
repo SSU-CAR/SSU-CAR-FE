@@ -3,8 +3,8 @@ import { Layout } from "@components/common/Layout";
 
 export const HomePage = () => {
   return (
-    <Layout navbar={true}>
-      <Title>안녕하세요</Title>
+    <Layout navbar>
+      <Title>홈</Title>
     </Layout>
   );
 };
