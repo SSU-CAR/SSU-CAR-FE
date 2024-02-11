@@ -8,6 +8,7 @@ import { NotePage } from "@pages/Note";
 import { ReportPage } from "@pages/Report";
 import { BadgePage } from "@pages/Badge";
 
+
 function App() {
   return (
     <BrowserRouter>
