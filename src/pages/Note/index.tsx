@@ -1,9 +1,10 @@
 import { Layout } from "@components/common/Layout";
+import { Note } from "@components/Note";
 
 export const NotePage = () => {
   return (
     <Layout navbar>
-      <div>주행 기록</div>
+      <Note />
     </Layout>
   );
 };
