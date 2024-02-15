@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const ReportContainer = styled.div`
+export const ReportContainer = styled.div<{ open: boolean }>`
   width: 360px;
-  height: 164px;
+  height: ${(props) => (props.open ? "360px" : "164px")};
   margin: 5px 0;
   padding: 15px 22px;
 
@@ -58,3 +58,5 @@ export const ShowMoreButton = styled.button`
     margin-left: 4px;
   }
 `;
+
+export const DetailContents = styled.div``;

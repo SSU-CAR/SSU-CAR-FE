@@ -48,25 +48,28 @@ const data = [
 ];
 export const Note = () => {
   return (
-    <>
+    <NoteContainer>
       <PageHeader name="주행 기록" />
       <Reports>
         {data.map((el) => {
           return <Report key={el.reportId} data={el} />;
         })}
       </Reports>
-    </>
+    </NoteContainer>
   );
 };
 
-const Reports = styled.div`
-  width: 100%;
-  height: calc(100% - 100px);
-  padding-top: 15px;
-  padding-bottom: 80px;
+const NoteContainer = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+const Reports = styled.div`
+  height: 100%;
+  padding-top: 15px;
+  padding-bottom: 100px;
+
   overflow-y: scroll;
 
   //hide scroll bar
