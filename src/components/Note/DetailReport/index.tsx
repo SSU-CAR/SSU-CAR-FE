@@ -23,6 +23,7 @@ export const DetailReport = ({ reportId }: DetailReportProps) => {
 
   //TODO: API 연결
   useEffect(() => {
+    console.log(reportId);
     setDetails(data);
   }, []);
   return (
