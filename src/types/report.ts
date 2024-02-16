@@ -19,3 +19,14 @@ export interface ReportDetailType {
   scenarioName: string;
   total: number;
 }
+
+/**
+ * 간단 주행 이력 조회
+ * /report/bio
+ */
+export interface BioType {
+  monthlyMileage: string;
+  totalMileage: string;
+  latestDeparture: string;
+  latestArrival: string;
+}
