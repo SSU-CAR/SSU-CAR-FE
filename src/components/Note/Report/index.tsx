@@ -35,7 +35,7 @@ export const Report = ({ data }: ReportProps) => {
       </styles.InfoContainer>
       <styles.InfoContainer>
         <styles.InfoType>운전 점수</styles.InfoType>
-        <styles.InfoContent>{data.score}</styles.InfoContent>
+        <styles.InfoContent className="score">{data.score}</styles.InfoContent>
       </styles.InfoContainer>
       <styles.SplitLine></styles.SplitLine>
 

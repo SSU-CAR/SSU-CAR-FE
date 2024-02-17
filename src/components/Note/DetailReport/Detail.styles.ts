@@ -21,14 +21,14 @@ export const Scenario = styled.div`
 
 export const ScenarioName = styled.div`
   font-family: "Pretendard";
-  font-weight: 400;
+  font-weight: 500;
   font-size: 14px;
   color: ${({ theme }) => theme.colors.gray9};
 `;
 
 export const Number = styled.div`
   font-family: "Pretendard";
-  font-weight: 400;
+  font-weight: 500;
   font-size: 14px;
   color: ${({ theme }) => theme.colors.blue400};
 
