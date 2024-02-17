@@ -33,6 +33,7 @@ export const ProgressbarContainer = styled.div`
   width: 80px;
   height: 80px;
   margin: 0 16px;
+  font-weight: 600;
 `;
 
 export const LineChartContainer = styled.div`

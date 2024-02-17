@@ -6,7 +6,7 @@ export const DetailWarningContainer = styled.div`
 
 export const DetailWarningHeader = styled.div`
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   color: ${({ theme }) => theme.colors.blue500};
   img {
     width: 20px;
