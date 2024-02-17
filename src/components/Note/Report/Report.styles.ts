@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const ReportContainer = styled.div<{ open: boolean }>`
   width: 360px;
-  height: ${(props) => (props.open ? "360px" : "164px")};
-  margin: 5px 0;
+  height: ${(props) => (props.open ? "345px" : "164px")};
+  margin: 12px 0;
   padding: 15px 22px;
 
   background-color: white;
@@ -17,7 +17,7 @@ export const InfoContainer = styled.div`
 
 export const InfoType = styled.span`
   font-family: "Pretendard";
-  font-weight: 400;
+  font-weight: 500;
   font-size: 14px;
   color: ${({ theme }) => theme.colors.gray5};
 
@@ -26,9 +26,12 @@ export const InfoType = styled.span`
 
 export const InfoContent = styled.span`
   font-family: "Pretendard";
-  font-weight: 400;
+  font-weight: 500;
   font-size: 14px;
   color: ${({ theme }) => theme.colors.gray9};
+  &.score {
+    color: ${({ theme }) => theme.colors.blue500};
+  }
 `;
 
 export const SplitLine = styled.div`
