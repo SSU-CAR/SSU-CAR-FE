@@ -32,9 +32,15 @@ export const ScoreHeader = styled.div`
 export const ProgressbarContainer = styled.div`
   width: 80px;
   height: 80px;
-  margin: 0 20px;
+  margin: 0 16px;
 `;
 
+export const LineChartContainer = styled.div`
+  width: 250px;
+`;
 export const ScoreContents = styled.div`
   width: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

@@ -2,9 +2,10 @@ import * as styles from "./Score.styles";
 import { useState, useEffect } from "react";
 import { MonthlyScoreType } from "src/types/report";
 import score_icon from "@assets/icons/score_icon.svg";
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import { CircularProgressbar } from "react-circular-progressbar";
 import ChangingProgressProvider from "./ChaingingProgressProvider";
 import "react-circular-progressbar/dist/styles.css";
+import { ScoreChart } from "./ScoreChart";
 
 const score = {
   averageScore: 75,
@@ -25,6 +26,14 @@ export const Score = () => {
     month5: 0,
     month6: 0,
   });
+  const months = [
+    data.month6,
+    data.month5,
+    data.month4,
+    data.month3,
+    data.month2,
+    data.month1,
+  ];
 
   useEffect(() => {
     //TODO: API 연결
@@ -50,6 +59,9 @@ export const Score = () => {
             )}
           </ChangingProgressProvider>
         </styles.ProgressbarContainer>
+        <styles.LineChartContainer>
+          <ScoreChart months={months} />
+        </styles.LineChartContainer>
       </styles.ScoreContents>
     </styles.ScoreContainer>
   );
