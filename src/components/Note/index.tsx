@@ -67,7 +67,7 @@ const NoteContainer = styled.div`
 `;
 const Reports = styled.div`
   height: 100%;
-  padding-top: 15px;
+  padding-top: 75px;
   padding-bottom: 100px;
 
   overflow-y: scroll;

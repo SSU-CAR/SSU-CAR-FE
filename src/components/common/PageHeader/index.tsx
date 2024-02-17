@@ -30,6 +30,9 @@ const PageHeaderContainer = styled.div<{ height?: string }>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  position: absolute;
+  top: 0;
 `;
 
 const PageNameText = styled.div`

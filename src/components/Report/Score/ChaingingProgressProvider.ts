@@ -7,7 +7,7 @@ interface Props {
 }
 
 const ChangingProgressProvider: React.FC<Props> = ({
-  interval = 1000,
+  interval = 500,
   values,
   children,
 }) => {

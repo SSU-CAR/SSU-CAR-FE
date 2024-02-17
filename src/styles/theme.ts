@@ -25,6 +25,10 @@ const colors = {
   red400: "#F42D2D",
   red300: "#F86D60",
   red200: "#FB9580",
+  chart1: "#FFD762",
+  chart2: "#ABA7F9",
+  chart3: "#564CFF",
+  chart4: "#6CE4C0",
 };
 
 export type ColorTypes = typeof colors;
