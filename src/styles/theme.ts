@@ -29,6 +29,12 @@ const colors = {
   chart2: "#64A2FF",
   chart3: "#564CFF",
   chart4: "#6CE4C0",
+  chart5: "#F5C3AF",
+  chart6: "#FA67F6",
+  chart7: "#6767D9",
+  chart8: "#FED263",
+  chart9: "#EC609C",
+  chart10: "#EF8482",
 };
 
 export type ColorTypes = typeof colors;

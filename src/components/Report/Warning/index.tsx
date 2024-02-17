@@ -1,6 +1,7 @@
 import * as styles from "./Warning.styles";
 import chart_icon from "@assets/icons/chart_icon.svg";
 import { DoughnutChart } from "./DoughnutChart";
+import { DetailWarning } from "./DetailWarning/DetailWarning";
 
 export const Warning = () => {
   return (
@@ -32,6 +33,8 @@ export const Warning = () => {
           </styles.DoughnutItem>
         </styles.DoughnutItems>
       </styles.DoughnutContents>
+      <DetailWarning name="차량 내부 주의 항목" />
+      <DetailWarning name="차량 외부 주의 항목" />
     </styles.WarningContainer>
   );
 };

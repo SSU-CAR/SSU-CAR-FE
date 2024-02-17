@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ScoreContainer = styled.div`
   width: 100%;
-  height: 200px;
+  height: 215px;
   margin-top: 6px;
   background-color: white;
 
