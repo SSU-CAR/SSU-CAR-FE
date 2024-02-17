@@ -19,7 +19,7 @@ export const Warning = () => {
             실선에서 차선 변경
           </styles.DoughnutItem>
           <styles.DoughnutItem>
-            <styles.ColorMark color="#ABA7F9" />
+            <styles.ColorMark color="#64A2FF" />
             앞차 간격 미유지
           </styles.DoughnutItem>
           <styles.DoughnutItem>

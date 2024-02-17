@@ -26,7 +26,7 @@ const colors = {
   red300: "#F86D60",
   red200: "#FB9580",
   chart1: "#FFD762",
-  chart2: "#ABA7F9",
+  chart2: "#64A2FF",
   chart3: "#564CFF",
   chart4: "#6CE4C0",
 };

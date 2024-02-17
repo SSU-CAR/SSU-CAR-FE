@@ -17,9 +17,8 @@ export const DoughnutChart = () => {
       {
         label: "# of Votes",
         data: [8, 3, 5, 4],
-        backgroundColor: ["#FFD762", "#ABA7F9", "#564CFF", "#6CE4C0"],
-        borderColor: ["#FFD762", "#ABA7F9", "#564CFF", "#6CE4C0"],
-        borderWidth: 1,
+        backgroundColor: ["#FFD762", "#64A2FF", "#564CFF", "#6CE4C0"],
+        borderWidth: 0,
       },
     ],
   };
