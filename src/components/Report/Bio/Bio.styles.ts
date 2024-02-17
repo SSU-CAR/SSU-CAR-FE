@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const BioContainer = styled.div`
   width: 100%;
-  height: 100px;
+  height: 120px;
   background-color: white;
   margin-top: 6px;
 
@@ -13,7 +13,7 @@ export const BioContainer = styled.div`
 
 export const BioName = styled.div`
   width: 360px;
-  margin: 14px 0;
+  margin: 24px 0 14px;
 
   font-family: "Pretendard";
   font-weight: 600;
@@ -24,7 +24,7 @@ export const BioName = styled.div`
 export const DistanceContainer = styled.div`
   width: 360px;
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 `;
 
 export const Distance = styled.div``;

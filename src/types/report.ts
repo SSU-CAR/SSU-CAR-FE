@@ -30,3 +30,17 @@ export interface BioType {
   latestDeparture: string;
   latestArrival: string;
 }
+
+/**
+ * 나의 안전 점수 조회
+ * /report/monthly
+ */
+export interface MonthlyScoreType {
+  averageScore: number;
+  month1: number;
+  month2: number;
+  month3: number;
+  month4: number;
+  month5: number;
+  month6: number;
+}
