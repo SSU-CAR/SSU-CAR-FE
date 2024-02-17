@@ -2,7 +2,7 @@ import * as styles from "./Score.styles";
 import { useState, useEffect } from "react";
 import { MonthlyScoreType } from "src/types/report";
 import score_icon from "@assets/icons/score_icon.svg";
-import { CircularProgressbar } from "react-circular-progressbar";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import ChangingProgressProvider from "./ChaingingProgressProvider";
 import "react-circular-progressbar/dist/styles.css";
 import { ScoreChart } from "./ScoreChart";
@@ -55,6 +55,11 @@ export const Score = () => {
                 text={`${data.averageScore}점`}
                 className="progressbar"
                 strokeWidth={8}
+                styles={buildStyles({
+                  pathColor: "#5F81FF",
+                  trailColor: "#DFE8FF",
+                  textColor: "#5F81FF",
+                })}
               />
             )}
           </ChangingProgressProvider>
