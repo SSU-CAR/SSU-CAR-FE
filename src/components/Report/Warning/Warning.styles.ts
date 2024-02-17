@@ -14,18 +14,18 @@ export const WarningContainer = styled.div`
 
 export const WarningHeader = styled.div`
   width: 360px;
-  margin: 18px 0;
+  margin: 20px 0;
 
   font-family: "Pretendard";
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   color: ${({ theme }) => theme.colors.gray9};
 
   display: flex;
   align-items: center;
   img {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     margin-right: 4px;
   }
 `;

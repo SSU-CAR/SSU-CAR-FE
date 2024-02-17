@@ -13,11 +13,11 @@ export const BioContainer = styled.div`
 
 export const BioName = styled.div`
   width: 360px;
-  margin: 24px 0 14px;
+  margin: 22px 0 14px;
 
   font-family: "Pretendard";
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   color: ${({ theme }) => theme.colors.gray9};
 `;
 

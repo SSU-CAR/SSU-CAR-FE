@@ -17,14 +17,14 @@ export const ScoreHeader = styled.div`
 
   font-family: "Pretendard";
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   color: ${({ theme }) => theme.colors.gray9};
 
   display: flex;
   align-items: center;
   img {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     margin-right: 4px;
   }
 `;
