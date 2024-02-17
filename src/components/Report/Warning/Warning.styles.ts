@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const WarningContainer = styled.div`
   width: 100%;
-  height: 600px;
+  height: 650px;
   margin-top: 6px;
 
   background-color: white;
