@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { Layout } from "@components/common/Layout";
 import { Home } from "@components/Home";
 
