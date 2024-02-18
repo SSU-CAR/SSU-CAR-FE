@@ -5,7 +5,7 @@ export const Home = () => {
   const navigate = useNavigate();
 
   const handleClickDriveBtn = () => {
-    navigate("/drive");
+    navigate("/driving");
   };
   return (
     <HomeContainer>
