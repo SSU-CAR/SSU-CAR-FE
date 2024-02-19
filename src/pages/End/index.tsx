@@ -1,10 +1,10 @@
 import { Layout } from "@components/common/Layout";
-import { Home } from "@components/Home";
+import { End } from "@components/End";
 
-export const HomePage = () => {
+export const EndPage = () => {
   return (
     <Layout navbar>
-      <Home />
+      <End />
     </Layout>
   );
 };

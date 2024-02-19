@@ -7,7 +7,8 @@ import { HomePage } from "@pages/Home";
 import { NotePage } from "@pages/Note";
 import { ReportPage } from "@pages/Report";
 import { BadgePage } from "@pages/Badge";
-
+import { DrivingPage } from "@pages/Driving";
+import { EndPage } from "@pages/End";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           <Route path="/note" element={<NotePage />} />
           <Route path="/report" element={<ReportPage />} />
           <Route path="/badge" element={<BadgePage />} />
+          <Route path="/driving" element={<DrivingPage />} />
+          <Route path="/end" element={<EndPage />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>
