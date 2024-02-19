@@ -40,6 +40,7 @@ const data = [
 export const BadgeContents = () => {
   const [badges, setBadges] = useState<BadgeType[]>([]);
   const [open, setOpen] = useState<Boolean>(false);
+  const [current, setCurrent] = useState<BadgeType>();
 
   useEffect(() => {
     setBadges(data);
@@ -49,10 +50,17 @@ export const BadgeContents = () => {
     <BadgeContentsContainer>
       <Badges>
         {badges.map((el) => {
-          return <Badge key={el.badgeId} badgeData={el} setOpen={setOpen} />;
+          return (
+            <Badge
+              key={el.badgeId}
+              badgeData={el}
+              setOpen={setOpen}
+              setCurrent={setCurrent}
+            />
+          );
         })}
       </Badges>
-      {open ? <BottomSheet setOpen={setOpen} /> : null}
+      {open ? <BottomSheet setOpen={setOpen} current={current} /> : null}
     </BadgeContentsContainer>
   );
 };

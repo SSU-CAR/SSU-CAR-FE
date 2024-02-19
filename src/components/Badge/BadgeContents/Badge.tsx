@@ -4,10 +4,12 @@ import { BadgeType } from "src/types/badge";
 interface BadgeProps {
   badgeData: BadgeType;
   setOpen: React.Dispatch<React.SetStateAction<Boolean>>;
+  setCurrent: React.Dispatch<React.SetStateAction<BadgeType | undefined>>;
 }
-export const Badge = ({ badgeData, setOpen }: BadgeProps) => {
+export const Badge = ({ badgeData, setOpen, setCurrent }: BadgeProps) => {
   const handleClickBadge = () => {
     setOpen(true);
+    setCurrent(badgeData);
   };
   return (
     <BadgeContainer>
