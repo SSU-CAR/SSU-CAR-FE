@@ -72,6 +72,6 @@ const Badges = styled.div`
   align-content: flex-start;
   flex-wrap: wrap;
 
-  width: 420px;
+  width: 372px;
   padding-top: 20px;
 `;

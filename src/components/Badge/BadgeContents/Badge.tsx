@@ -29,8 +29,8 @@ const BadgeContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  width: 120px;
-  margin: 10px;
+  width: 124px;
+  margin: 10px 0;
 `;
 
 const BadgeImage = styled.button<{ done: number }>`
