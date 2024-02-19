@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { BadgeType } from "src/types/badge";
 import { Badge } from "./Badge";
+import { BottomSheet } from "./BottomSheet";
 
 const data = [
   {
@@ -38,6 +39,7 @@ const data = [
 
 export const BadgeContents = () => {
   const [badges, setBadges] = useState<BadgeType[]>([]);
+  const [open, setOpen] = useState<Boolean>(false);
 
   useEffect(() => {
     setBadges(data);
@@ -47,9 +49,10 @@ export const BadgeContents = () => {
     <BadgeContentsContainer>
       <Badges>
         {badges.map((el) => {
-          return <Badge key={el.badgeId} badgeData={el} />;
+          return <Badge key={el.badgeId} badgeData={el} setOpen={setOpen} />;
         })}
       </Badges>
+      {open ? <BottomSheet setOpen={setOpen} /> : null}
     </BadgeContentsContainer>
   );
 };

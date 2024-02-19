@@ -3,11 +3,15 @@ import { BadgeType } from "src/types/badge";
 
 interface BadgeProps {
   badgeData: BadgeType;
+  setOpen: React.Dispatch<React.SetStateAction<Boolean>>;
 }
-export const Badge = ({ badgeData }: BadgeProps) => {
+export const Badge = ({ badgeData, setOpen }: BadgeProps) => {
+  const handleClickBadge = () => {
+    setOpen(true);
+  };
   return (
     <BadgeContainer>
-      <BadgeImage done={badgeData.status}>
+      <BadgeImage done={badgeData.status} onClick={handleClickBadge}>
         <img
           src={`/images/badge_${badgeData.badgeId}${
             badgeData.status === 1 ? "_complete" : ""
