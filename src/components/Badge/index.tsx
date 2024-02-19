@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { PageHeader } from "@components/common/PageHeader";
+import { BadgeContents } from "./BadgeContents";
 
 export const Badge = () => {
   return (
@@ -13,6 +14,7 @@ export const Badge = () => {
           </div>
         </SubHeader>
       </PageHeader>
+      <BadgeContents></BadgeContents>
     </BadgeContainer>
   );
 };
@@ -20,6 +22,9 @@ export const Badge = () => {
 const BadgeContainer = styled.div`
   position: relative;
   height: 100%;
+
+  display: flex;
+  flex-direction: column;
 `;
 
 const SubHeader = styled.div`
