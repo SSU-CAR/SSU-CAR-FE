@@ -34,6 +34,7 @@ const DrvieButton = styled.button`
 
   font-family: "HyndaiHarmony";
   font-size: 15px;
+  font-weight: 300;
   color: ${({ theme }) => theme.colors.blue500};
 
   &:hover {

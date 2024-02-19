@@ -51,6 +51,7 @@ const ArriveButton = styled.button`
 
   font-family: "HyndaiHarmony";
   font-size: 15px;
+  font-weight: 300;
   color: white;
 
   &:hover {

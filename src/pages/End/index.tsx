@@ -1,9 +1,10 @@
 import { Layout } from "@components/common/Layout";
+import { End } from "@components/End";
 
 export const EndPage = () => {
   return (
-    <Layout>
-      <div>주행 후 리포트</div>
+    <Layout navbar>
+      <End />
     </Layout>
   );
 };
