@@ -4,14 +4,14 @@ import { drivingStartAPI } from "@api/drivingAPIS";
 import { PageHeader } from "@components/common/PageHeader";
 import { getDayName } from "@utils/datetime";
 import { Scores } from "./Scores";
+import { Comment } from "./Comment";
 
 export const Home = () => {
   const navigate = useNavigate();
 
   const handleClickDriveBtn = () => {
     const apireturn = drivingStartAPI();
-    apireturn.then((res) => {
-      console.log(res);
+    apireturn.then(() => {
       navigate("/driving");
     });
   };
@@ -27,6 +27,7 @@ export const Home = () => {
       </PageHeader>
       <Contents>
         <Scores />
+        <Comment />
       </Contents>
       <DrvieButton onClick={handleClickDriveBtn}>운전하기</DrvieButton>
     </HomeContainer>

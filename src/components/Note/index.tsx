@@ -1,57 +1,25 @@
 import { PageHeader } from "@components/common/PageHeader";
 import { Report } from "./Report";
 import styled from "styled-components";
+import { useEffect, useState } from "react";
+import { ReportHistoryType } from "src/types/report";
+import { historyAPI } from "@api/historyAPIS";
 
-const data = [
-  {
-    reportId: 1,
-    departuredAt: "2023-07-23T18:51:16.007759",
-    arrivedAt: "2023-07-23T18:52:44.789957",
-    mileage: "5.1",
-    score: "62",
-  },
-  {
-    reportId: 2,
-    departuredAt: "2023-10-23T18:51:16.007759",
-    arrivedAt: "2023-10-23T19:30:44.789957",
-    mileage: "5.1",
-    score: "71",
-  },
-  {
-    reportId: 3,
-    departuredAt: "2023-07-23T18:51:16.007759",
-    arrivedAt: "2023-07-23T18:52:44.789957",
-    mileage: "5.1",
-    score: "62",
-  },
-  {
-    reportId: 4,
-    departuredAt: "2023-10-23T18:51:16.007759",
-    arrivedAt: "2023-10-23T19:30:44.789957",
-    mileage: "5.1",
-    score: "71",
-  },
-  {
-    reportId: 5,
-    departuredAt: "2023-07-23T18:51:16.007759",
-    arrivedAt: "2023-07-23T18:52:44.789957",
-    mileage: "5.1",
-    score: "62",
-  },
-  {
-    reportId: 6,
-    departuredAt: "2023-10-23T18:51:16.007759",
-    arrivedAt: "2023-10-23T19:30:44.789957",
-    mileage: "5.1",
-    score: "71",
-  },
-];
 export const Note = () => {
+  const [data, setData] = useState<ReportHistoryType[]>();
+
+  useEffect(() => {
+    const response = historyAPI();
+    response.then((res) => {
+      setData(res);
+    });
+  }, []);
+
   return (
     <NoteContainer>
       <PageHeader name="주행 기록" />
       <Reports>
-        {data.map((el) => {
+        {data?.map((el) => {
           return <Report key={el.reportId} data={el} />;
         })}
       </Reports>

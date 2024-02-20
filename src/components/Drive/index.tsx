@@ -10,11 +10,7 @@ export const Drive = () => {
     const apiResponse = drivingEndAPI();
     apiResponse.then((res) => {
       console.log(res);
-      navigate("/end", {
-        state: {
-          reportId: res?.data?.reportId,
-        },
-      });
+      navigate(`/end/${res.reportId}`);
     });
   };
 

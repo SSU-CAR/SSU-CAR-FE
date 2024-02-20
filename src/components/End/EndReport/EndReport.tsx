@@ -19,9 +19,9 @@ export const EndReport = ({ data }: EndReportProps) => {
         </styles.BasicInfo>
         <styles.BasicInfo>
           주행 시간
-          <span>{`${data?.departuredAt.slice(10, 15)} - ${data?.arrivedAt.slice(
+          <span>{`${data?.departuredAt.slice(10, 16)} - ${data?.arrivedAt.slice(
             10,
-            15
+            16
           )}`}</span>
         </styles.BasicInfo>
         <styles.BasicInfo>
