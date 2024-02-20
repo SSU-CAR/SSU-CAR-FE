@@ -1,11 +1,16 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { drivingStartAPI } from "@api/drivingAPIS";
 
 export const Home = () => {
   const navigate = useNavigate();
 
   const handleClickDriveBtn = () => {
-    navigate("/driving");
+    const apireturn = drivingStartAPI();
+    apireturn.then((res) => {
+      console.log(res);
+      navigate("/driving");
+    });
   };
   return (
     <HomeContainer>

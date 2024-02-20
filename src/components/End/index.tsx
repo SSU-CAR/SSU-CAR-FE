@@ -1,11 +1,29 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { EndReport } from "./EndReport/EndReport";
+import { useLocation } from "react-router-dom";
+import { drivingEndReportAPI } from "@api/drivingAPIS";
+import { useEffect, useState } from "react";
+import { DrivingEndType } from "src/types/driving";
 
 export const End = () => {
+  const location = useLocation();
+
+  const [data, setData] = useState<DrivingEndType>();
+
+  useEffect(() => {
+    const reportId = location.state?.reportId;
+    if (reportId) {
+      const response = drivingEndReportAPI(reportId);
+      response.then((res) => {
+        setData(res);
+      });
+    }
+  }, []);
+
   return (
     <EndContainer>
-      <EndReport />
+      <EndReport data={data} />
       <Link to="/">
         <EndButton>주행 종료</EndButton>
       </Link>
