@@ -24,6 +24,9 @@ export const EndReport = ({ data }: EndReportProps) => {
             15
           )}`}</span>
         </styles.BasicInfo>
+        <styles.BasicInfo>
+          코멘트<span>{data?.scoreComment}</span>
+        </styles.BasicInfo>
       </styles.BasicInfos>
       <styles.DetailInfo>
         <styles.SubHeader>차량 외부 감지 항목</styles.SubHeader>
