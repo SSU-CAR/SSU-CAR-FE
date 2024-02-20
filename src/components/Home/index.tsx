@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { drivingStartAPI } from "@api/drivingAPIS";
 import { PageHeader } from "@components/common/PageHeader";
 import { getDayName } from "@utils/datetime";
+import { Scores } from "./Scores";
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -24,6 +25,9 @@ export const Home = () => {
           date.getMonth() + 1
         }월 ${date.getDay()}일 (${getDayName(date)})`}</DateText>
       </PageHeader>
+      <Contents>
+        <Scores />
+      </Contents>
       <DrvieButton onClick={handleClickDriveBtn}>운전하기</DrvieButton>
     </HomeContainer>
   );
@@ -48,6 +52,13 @@ const DateText = styled.div`
   font-weight: 400;
   color: ${({ theme }) => theme.colors.gray6};
   margin-top: 5px;
+`;
+
+const Contents = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 `;
 
 const DrvieButton = styled.button`
