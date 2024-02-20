@@ -1,12 +1,17 @@
 import styled from "styled-components";
 import car_driving_img from "@assets/images/car_driving.gif";
 import { useNavigate } from "react-router-dom";
+import { drivingEndAPI } from "@api/drivingAPIS";
 
 export const Drive = () => {
   const navigate = useNavigate();
 
   const handleClickArriveBtn = () => {
-    navigate("/end");
+    const apiResponse = drivingEndAPI();
+    apiResponse.then((res) => {
+      console.log(res);
+      navigate(`/end/${res.reportId}`);
+    });
   };
 
   return (

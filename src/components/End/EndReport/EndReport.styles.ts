@@ -29,7 +29,7 @@ export const BasicInfos = styled.div`
   flex-direction: column;
 
   margin: 15px 0;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 `;
 
 export const BasicInfo = styled.div`

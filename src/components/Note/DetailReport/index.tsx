@@ -1,35 +1,30 @@
 import { useState, useEffect } from "react";
 import { ReportDetailType } from "src/types/report";
 import * as styles from "./Detail.styles";
+import { historyDetailAPI } from "@api/historyAPIS";
 
 interface DetailReportProps {
   reportId: number;
 }
 
-const data = [
-  {
-    scenarioType: 1,
-    scenarioName: "차선 변경",
-    total: 1,
-  },
-  {
-    scenarioType: 4,
-    scenarioName: "정면 주시 안함",
-    total: 12,
-  },
-];
-export const DetailReport = ({ reportId }: DetailReportProps) => {
-  const [deatils, setDetails] = useState<ReportDetailType[]>([]);
+interface DetailHistoryType {
+  internalSummaries: ReportDetailType[];
+  externalSummaries: ReportDetailType[];
+}
 
-  //TODO: API 연결
+export const DetailReport = ({ reportId }: DetailReportProps) => {
+  const [deatils, setDetails] = useState<DetailHistoryType>();
+
   useEffect(() => {
-    console.log(reportId);
-    setDetails(data);
+    const response = historyDetailAPI(reportId);
+    response.then((res) => {
+      setDetails(res);
+    });
   }, []);
   return (
     <>
       <styles.ProtectedFrom>차량 외부</styles.ProtectedFrom>
-      {deatils.map((el) => {
+      {deatils?.externalSummaries.map((el) => {
         return (
           <styles.Scenario key={el.scenarioType}>
             <styles.ScenarioName>{el.scenarioName}</styles.ScenarioName>
@@ -38,7 +33,7 @@ export const DetailReport = ({ reportId }: DetailReportProps) => {
         );
       })}
       <styles.ProtectedFrom>차량 내부</styles.ProtectedFrom>
-      {deatils.map((el) => {
+      {deatils?.internalSummaries.map((el) => {
         return (
           <styles.Scenario key={el.scenarioType}>
             <styles.ScenarioName>{el.scenarioName}</styles.ScenarioName>

@@ -21,7 +21,7 @@ function App() {
           <Route path="/report" element={<ReportPage />} />
           <Route path="/badge" element={<BadgePage />} />
           <Route path="/driving" element={<DrivingPage />} />
-          <Route path="/end" element={<EndPage />} />
+          <Route path="/end/:reportId" element={<EndPage />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>
