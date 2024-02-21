@@ -1,7 +1,19 @@
 import styled from "styled-components";
 import info_icon from "@assets/icons/info_icon.svg";
+import { homeRecentsAPI } from "@api/homeAPIS";
+import { useState, useEffect } from "react";
+import { ScenarioType } from "src/types/driving";
 
 export const Warning = () => {
+  const [data, setData] = useState<ScenarioType[]>();
+
+  useEffect(() => {
+    const response = homeRecentsAPI();
+    response.then((res) => {
+      if (res) setData(res?.recentRisks);
+    });
+  }, []);
+
   return (
     <WarningContainer>
       <WarningContents>
@@ -10,15 +22,13 @@ export const Warning = () => {
           <img src={info_icon} alt="정보" />
           최근 주행 기록을 바탕으로 산정된 주의 항목입니다.
         </InfoText>
-        <WarningItem>
-          1. 실선에서 차선 변경 <span>12번</span>
-        </WarningItem>
-        <WarningItem>
-          2. 실선에서 차선 변경 <span>8번</span>
-        </WarningItem>
-        <WarningItem>
-          3. 실선에서 차선 변경 <span>4번</span>
-        </WarningItem>
+        {data?.map((el, idx) => {
+          return (
+            <WarningItem key={el.scenarioType}>
+              {`${idx}. ${el.scenarioName}`} <span>{el.scenarioCount}번</span>
+            </WarningItem>
+          );
+        })}
       </WarningContents>
     </WarningContainer>
   );

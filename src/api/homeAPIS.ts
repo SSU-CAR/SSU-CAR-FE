@@ -1,3 +1,4 @@
+import { HomeRecentType, LatestScoresType } from "src/types/home";
 import { axiosInstance } from "./instance";
 
 //최근 주행 점수
@@ -13,7 +14,7 @@ export const homeScoreAPI = async () => {
 export const homeLatestScoreAPI = async () => {
   try {
     const response = await axiosInstance.get("/home/latestScores");
-    return response.data;
+    return response.data as LatestScoresType;
   } catch {
     return null;
   }
@@ -33,7 +34,7 @@ export const homeFeedbackAPI = async () => {
 export const homeRecentsAPI = async () => {
   try {
     const response = await axiosInstance.get("/home/recentRisks");
-    return response.data;
+    return response.data as HomeRecentType;
   } catch {
     return null;
   }
