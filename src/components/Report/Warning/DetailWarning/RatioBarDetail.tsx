@@ -1,23 +1,22 @@
 import styled from "styled-components";
+import { ScenarioType } from "src/types/driving";
 
-export const RatioBarDetail = () => {
+interface RatioBarDetailProps {
+  data: ScenarioType[];
+}
+export const RatioBarDetail = ({ data }: RatioBarDetailProps) => {
+  const classNames = ["first", "second", "third"];
   return (
     <RatioBarDetailContainer>
-      <BarContent>
-        <ColorMark className="first" />
-        <ContentName>실선에서 차선 변경</ContentName>
-        <ContentCount>12회</ContentCount>
-      </BarContent>
-      <BarContent>
-        <ColorMark className="second" />
-        <ContentName>앞차 간격 미유지</ContentName>
-        <ContentCount>8회</ContentCount>
-      </BarContent>
-      <BarContent>
-        <ColorMark className="third" />
-        <ContentName>전방 주시 태만</ContentName>
-        <ContentCount>4회</ContentCount>
-      </BarContent>
+      {data.map((el, idx) => {
+        return (
+          <BarContent key={el.scenarioType}>
+            <ColorMark className={classNames[idx]} />
+            <ContentName>{el.scenarioName}</ContentName>
+            <ContentCount>{el.scenarioCount}회</ContentCount>
+          </BarContent>
+        );
+      })}
     </RatioBarDetailContainer>
   );
 };

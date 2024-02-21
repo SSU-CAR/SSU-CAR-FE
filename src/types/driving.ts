@@ -3,7 +3,7 @@
  * /driving/end/${reportID}
  */
 
-interface ScenarioType {
+export interface ScenarioType {
   scenarioType: number;
   scenarioName: string;
   scenarioCount: number;

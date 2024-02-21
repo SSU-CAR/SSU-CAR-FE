@@ -1,3 +1,5 @@
+import { ScenarioType } from "./driving";
+
 /**
  * 주행 기록 전체 조회
  * /history
@@ -43,4 +45,13 @@ export interface MonthlyScoreType {
   month4: number;
   month5: number;
   month6: number;
+}
+
+/**
+ * 이번달 주의 항목
+ * /feedback/caution
+ */
+export interface ReportCautionType {
+  internalSummaries: ScenarioType[];
+  externalSummaries: ScenarioType[];
 }

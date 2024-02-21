@@ -11,12 +11,15 @@ export const options = {
   },
 };
 
-export const DoughnutChart = () => {
+interface DoughnutChartProps {
+  counts: number[];
+}
+export const DoughnutChart = ({ counts }: DoughnutChartProps) => {
   const data = {
     datasets: [
       {
         label: "# of Votes",
-        data: [8, 3, 5, 4],
+        data: counts,
         backgroundColor: ["#FFD762", "#64A2FF", "#564CFF", "#6CE4C0"],
         borderWidth: 0,
       },

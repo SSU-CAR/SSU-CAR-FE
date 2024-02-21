@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ReportContainer = styled.div<{ open: boolean }>`
   width: 360px;
-  height: ${(props) => (props.open ? "345px" : "164px")};
+  height: ${(props) => (props.open ? "364px" : "164px")};
   margin: 12px 0;
   padding: 15px 22px;
 

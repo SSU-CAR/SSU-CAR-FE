@@ -2,18 +2,16 @@ import * as styles from "./Bio.styles";
 import { useEffect, useState } from "react";
 import { BioType } from "src/types/report";
 import { getDateString } from "@utils/datetime";
+import { reportBioAPI } from "@api/reportAPIS";
 
-const data = {
-  monthlyMileage: "20.2",
-  totalMileage: "1206.456",
-  latestDeparture: "2023-10-23T18:51:16.007759",
-  latestArrival: "2023-10-23T19:30:44.789957",
-};
 export const Bio = () => {
   const [bio, setBio] = useState<BioType>();
 
   useEffect(() => {
-    setBio(data);
+    const response = reportBioAPI();
+    response.then((res) => {
+      setBio(res);
+    });
   }, []);
 
   return (
