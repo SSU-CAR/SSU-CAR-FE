@@ -5,6 +5,7 @@ import { PageHeader } from "@components/common/PageHeader";
 import { getDayName } from "@utils/datetime";
 import { Scores } from "./Scores";
 import { Comment } from "./Comment";
+import { Warning } from "./Warning";
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ export const Home = () => {
       <Contents>
         <Scores />
         <Comment />
+        <Warning />
       </Contents>
       <DrvieButton onClick={handleClickDriveBtn}>운전하기</DrvieButton>
     </HomeContainer>

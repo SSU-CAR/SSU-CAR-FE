@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ChangingProgressProvider from "@components/Report/Score/ChaingingProgressProvider";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import { CurrentScoreChart } from "./CurrentScoreChart";
 
 export const Scores = () => {
   return (
@@ -8,7 +9,6 @@ export const Scores = () => {
       <ScoresHeader>나의 운전 점수</ScoresHeader>
       <ScoreContents>
         <ProgressbarContainer>
-          {" "}
           <ChangingProgressProvider values={[0, 80]}>
             {(percentage) => (
               <CircularProgressbar
@@ -25,6 +25,10 @@ export const Scores = () => {
             )}
           </ChangingProgressProvider>
         </ProgressbarContainer>
+        <ChartContainer>
+          <div>최근 3회 주행 기록</div>
+          <CurrentScoreChart />
+        </ChartContainer>
       </ScoreContents>
     </ScoresContainer>
   );
@@ -52,11 +56,22 @@ const ScoresHeader = styled.div`
 const ScoreContents = styled.div`
   width: 360px;
   display: flex;
-  margin: 10px 0;
+  justify-content: space-around;
 `;
 
 const ProgressbarContainer = styled.div`
   width: 90px;
   height: 90px;
   font-weight: 600;
+`;
+
+const ChartContainer = styled.div`
+  width: 200px;
+  div {
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    margin-left: 20px;
+    color: ${({ theme }) => theme.colors.blue700};
+  }
 `;
