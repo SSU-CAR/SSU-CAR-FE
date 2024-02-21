@@ -5,6 +5,7 @@ interface RatioBarProps {
 }
 export const RatioBar = ({ data }: RatioBarProps) => {
   const sum = data.reduce((acc, cur) => acc + cur, 0);
+  const classNames = ["first", "second", "third"];
 
   const getWidth = (num: number) => {
     const width = Math.ceil(320 * (num / sum));
@@ -13,9 +14,15 @@ export const RatioBar = ({ data }: RatioBarProps) => {
 
   return (
     <RatioBarContainer>
-      <RatioContent className="first" width={getWidth(data[0])} />
-      <RatioContent className="second" width={getWidth(data[1])} />
-      <RatioContent className="third" width={getWidth(data[2])} />
+      {data.map((el, idx) => {
+        return (
+          <RatioContent
+            key={idx}
+            className={classNames[idx]}
+            width={getWidth(el)}
+          />
+        );
+      })}
     </RatioBarContainer>
   );
 };

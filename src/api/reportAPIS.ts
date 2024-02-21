@@ -8,7 +8,9 @@ const date = new Date();
  */
 export const reportBioAPI = async () => {
   try {
-    const response = await axiosInstance.get("/feedback/bio");
+    const response = await axiosInstance.post("/feedback/bio", {
+      thisMonth: date.getMonth() + 1,
+    });
     return response.data;
   } catch {
     return null;

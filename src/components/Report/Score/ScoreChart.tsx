@@ -59,15 +59,16 @@ const labels = [
   `${getFormerMonth(0)}월`,
 ];
 
-export interface ScoreChartProps {
-  months: number[];
+interface ScoreChartProps {
+  score: number;
 }
-export const ScoreChart = ({ months }: ScoreChartProps) => {
+
+export const ScoreChart = ({ score }: ScoreChartProps) => {
   const data = {
     labels,
     datasets: [
       {
-        data: months,
+        data: [63, 88, 72, 95, 81, score],
         borderColor: "#87A3FF",
         backgroundColor: "#4561DB",
       },
