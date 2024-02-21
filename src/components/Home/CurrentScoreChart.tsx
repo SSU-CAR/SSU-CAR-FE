@@ -9,6 +9,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import { LatestScoresType } from "src/types/home";
 
 ChartJS.register(
   CategoryScale,
@@ -45,12 +46,16 @@ export const options = {
 
 const labels = ["", "", ""];
 
-export const CurrentScoreChart = () => {
+interface CurrentScoreChartProps {
+  scoresData: LatestScoresType | undefined;
+}
+export const CurrentScoreChart = ({ scoresData }: CurrentScoreChartProps) => {
+  const scores = scoresData?.latestScores?.map((el) => el.score);
   const data = {
     labels,
     datasets: [
       {
-        data: [63, 88, 72],
+        data: scores,
         borderColor: "#87A3FF",
         backgroundColor: "#4561DB",
       },

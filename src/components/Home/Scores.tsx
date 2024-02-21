@@ -2,18 +2,41 @@ import styled from "styled-components";
 import ChangingProgressProvider from "@components/Report/Score/ChaingingProgressProvider";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import { CurrentScoreChart } from "./CurrentScoreChart";
+import { useEffect, useState } from "react";
+import { homeScoreAPI, homeLatestScoreAPI } from "@api/homeAPIS";
+import { LatestScoresType } from "src/types/home";
 
 export const Scores = () => {
+  const [scoreData, setScoreData] = useState<{
+    score: Number;
+  }>({ score: 0 });
+
+  useEffect(() => {
+    const response = homeScoreAPI();
+    response.then((res) => {
+      if (res.score) setScoreData(res);
+    });
+  }, []);
+
+  const [scoresData, setScoresData] = useState<LatestScoresType>();
+
+  useEffect(() => {
+    const response = homeLatestScoreAPI();
+    response.then((res) => {
+      if (res) setScoresData(res);
+    });
+  }, []);
+
   return (
     <ScoresContainer>
       <ScoresHeader>나의 운전 점수</ScoresHeader>
       <ScoreContents>
         <ProgressbarContainer>
-          <ChangingProgressProvider values={[0, 80]}>
+          <ChangingProgressProvider values={[0, scoreData?.score]}>
             {(percentage) => (
               <CircularProgressbar
                 value={percentage}
-                text={`80점`}
+                text={`${scoreData?.score}점`}
                 className="progressbar"
                 strokeWidth={8}
                 styles={buildStyles({
@@ -27,7 +50,7 @@ export const Scores = () => {
         </ProgressbarContainer>
         <ChartContainer>
           <div>최근 3회 주행 기록</div>
-          <CurrentScoreChart />
+          <CurrentScoreChart scoresData={scoresData} />
         </ChartContainer>
       </ScoreContents>
     </ScoresContainer>

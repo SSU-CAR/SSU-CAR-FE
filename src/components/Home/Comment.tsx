@@ -1,12 +1,25 @@
 import styled from "styled-components";
 import comment_icon from "@assets/icons/comment_icon.svg";
+import { homeFeedbackAPI } from "@api/homeAPIS";
+import { useEffect, useState } from "react";
 
 export const Comment = () => {
+  const [data, setData] = useState<{
+    feedback: string;
+  }>();
+
+  useEffect(() => {
+    const response = homeFeedbackAPI();
+    response.then((res) => {
+      setData(res);
+    });
+  }, []);
+
   return (
     <CommentContainer>
       <CommentContents>
         <img src={comment_icon} alt="코멘트" />
-        <CommentText>{"오늘도 안전한 운전 하세요!"}</CommentText>
+        <CommentText>{data?.feedback}</CommentText>
       </CommentContents>
     </CommentContainer>
   );
