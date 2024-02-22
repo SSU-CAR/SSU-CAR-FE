@@ -30,7 +30,8 @@ export const Drive = () => {
       eventSource = new EventSource("/driving/events");
       eventSource.onmessage = async (event: any) => {
         const response = await event.data;
-        console.log(response);
+        const parsed = JSON.parse(response);
+        console.log(parsed);
         console.log("sse success");
         setToast(true);
         setMessage("message");
