@@ -2,9 +2,15 @@ import styled from "styled-components";
 import car_driving_img from "@assets/images/car_driving.gif";
 import { useNavigate } from "react-router-dom";
 import { drivingEndAPI } from "@api/drivingAPIS";
+import { useEffect, useState } from "react";
+import { Toast } from "@components/common/Toast";
 
 export const Drive = () => {
+  const [toast, setToast] = useState<boolean>(false);
+  const [message, setMessage] = useState<string>("졸음 운전이 감지되었습니다");
+
   const navigate = useNavigate();
+  let eventSource: any;
 
   const handleClickArriveBtn = () => {
     const apiResponse = drivingEndAPI();
@@ -12,13 +18,47 @@ export const Drive = () => {
       console.log(res);
       navigate(`/end/${res.reportId}`);
     });
+    eventSource.close();
   };
+
+  useEffect(() => {
+    window.speechSynthesis.getVoices();
+  }, []);
+
+  const fetchSSE = async () => {
+    try {
+      eventSource = new EventSource("/url");
+      eventSource.onmessage = async (event: any) => {
+        const response = await event.data;
+        console.log(response);
+        console.log("sse event!");
+        setToast(true);
+        setMessage("message");
+      };
+      eventSource.onerror = async (event: any) => {
+        eventSource.close();
+        console.error(event);
+      };
+    } catch {}
+  };
+
+  useEffect(() => {
+    fetchSSE();
+  }, []);
 
   return (
     <DriveContainer>
       <img src={car_driving_img} alt="주행 중" />
       <InfoText>주행 중입니다</InfoText>
+      <button
+        onClick={() => {
+          setToast(true);
+        }}
+      >
+        클릭
+      </button>
       <ArriveButton onClick={handleClickArriveBtn}>목적지 도착</ArriveButton>
+      {toast && <Toast message={message} setToast={setToast} />}
     </DriveContainer>
   );
 };

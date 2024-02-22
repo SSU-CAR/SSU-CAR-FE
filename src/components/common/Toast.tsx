@@ -1,12 +1,14 @@
 import { useEffect } from "react";
 import styled from "styled-components";
 import alarm_sound from "@assets/sound/alram.mp3";
+import { getSpeech } from "@utils/getSpeech";
 
 interface ToastProps {
   message: string;
   setToast: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export const Toast = ({ message, setToast }: ToastProps) => {
+  getSpeech(message);
   useEffect(() => {
     const timer = setTimeout(() => {
       setToast(false);
