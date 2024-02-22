@@ -28,7 +28,7 @@ export const DetailReport = ({ reportId }: DetailReportProps) => {
         return (
           <styles.Scenario key={el.scenarioType}>
             <styles.ScenarioName>{el.scenarioName}</styles.ScenarioName>
-            <styles.Number>{el.total}번</styles.Number>
+            <styles.Number>{el.scenarioCount}번</styles.Number>
           </styles.Scenario>
         );
       })}
@@ -37,7 +37,7 @@ export const DetailReport = ({ reportId }: DetailReportProps) => {
         return (
           <styles.Scenario key={el.scenarioType}>
             <styles.ScenarioName>{el.scenarioName}</styles.ScenarioName>
-            <styles.Number>{el.total}번</styles.Number>
+            <styles.Number>{el.scenarioCount}번</styles.Number>
           </styles.Scenario>
         );
       })}

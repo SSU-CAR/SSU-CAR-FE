@@ -19,7 +19,7 @@ export interface ReportHistoryType {
 export interface ReportDetailType {
   scenarioType: number;
   scenarioName: string;
-  total: number;
+  scenarioCount: number;
 }
 
 /**
