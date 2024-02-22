@@ -9,13 +9,20 @@ export const Drive = () => {
   const [toast, setToast] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("졸음 운전이 감지되었습니다");
 
+  const messages = {
+    1: "졸음 운전이 감지되었습니다",
+    2: "핸드폰 사용이 감지되었습니다",
+    3: "졸음 운전이 감지되었습니다",
+    51: "방향지시등 없이 차선변경이 감지되었습니다",
+    52: "실선에서 차선변경이 감지되었습니다",
+  };
+
   const navigate = useNavigate();
   let eventSource: any;
 
   const handleClickArriveBtn = () => {
     const apiResponse = drivingEndAPI();
     apiResponse.then((res) => {
-      console.log(res);
       navigate(`/end/${res.reportId}`);
     });
     eventSource.close();
@@ -28,13 +35,13 @@ export const Drive = () => {
   const fetchSSE = async () => {
     try {
       eventSource = new EventSource("/driving/events");
+      eventSource = new EventSource("/driving/events");
       eventSource.onmessage = async (event: any) => {
         const response = await event.data;
         const parsed = JSON.parse(response);
         console.log(parsed);
         console.log("sse success");
         setToast(true);
-        setMessage("message");
       };
       eventSource.onerror = async (event: any) => {
         console.error("sse error", event);
