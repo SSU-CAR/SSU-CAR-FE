@@ -27,17 +27,17 @@ export const Drive = () => {
 
   const fetchSSE = async () => {
     try {
-      eventSource = new EventSource("/url");
+      eventSource = new EventSource("/driving/events");
       eventSource.onmessage = async (event: any) => {
         const response = await event.data;
         console.log(response);
-        console.log("sse event!");
+        console.log("sse success");
         setToast(true);
         setMessage("message");
       };
       eventSource.onerror = async (event: any) => {
+        console.error("sse error", event);
         eventSource.close();
-        console.error(event);
       };
     } catch {}
   };
