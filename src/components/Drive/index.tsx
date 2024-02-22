@@ -39,8 +39,10 @@ export const Drive = () => {
         console.log("sse sucess");
         console.log(event.data);
         const id = event?.data || 0;
-        setMessage(messages[id]);
-        setToast(true);
+        if (id !== 0) {
+          setMessage(messages[id]);
+          setToast(true);
+        }
       });
     } catch {}
   };
