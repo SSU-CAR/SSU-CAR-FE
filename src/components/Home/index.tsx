@@ -24,7 +24,7 @@ export const Home = () => {
         <SubHeader>김모비님, 안녕하세요!</SubHeader>
         <DateText>{`${date.getFullYear()}년 ${
           date.getMonth() + 1
-        }월 ${date.getDay()}일 (${getDayName(date)})`}</DateText>
+        }월 ${date.getDate()}일 (${getDayName(date)})`}</DateText>
       </PageHeader>
       <Contents>
         <Scores />
