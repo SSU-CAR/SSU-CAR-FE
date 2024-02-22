@@ -22,9 +22,13 @@ export const Drive = () => {
 
   const handleClickArriveBtn = () => {
     const apiResponse = drivingEndAPI();
-    apiResponse.then((res) => {
-      navigate(`/end/${res.reportId}`);
-    });
+    apiResponse
+      .then((res) => {
+        navigate(`/end/${res.reportId}`);
+      })
+      .catch(() => {
+        navigate(`/end/1`);
+      });
     eventSource.close();
   };
 
@@ -37,9 +41,9 @@ export const Drive = () => {
       eventSource = new EventSource("http://15.164.253.57:8080/driving/events");
       eventSource.addEventListener("sse", function (event: any) {
         console.log("sse sucess");
-        console.log(event.data);
-        const id = event?.data || 0;
-        if (id !== 0) {
+        console.log(typeof event.data);
+        if (event?.data !== "0") {
+          const id = event?.data || 0;
           setMessage(messages[id]);
           setToast(true);
         }
@@ -51,7 +55,7 @@ export const Drive = () => {
     fetchSSE();
     return () => {
       console.log("sse close");
-      eventSource.close();
+      eventSource?.close();
     };
   }, []);
 
@@ -59,13 +63,6 @@ export const Drive = () => {
     <DriveContainer>
       <img src={car_driving_img} alt="주행 중" />
       <InfoText>주행 중입니다</InfoText>
-      <button
-        onClick={() => {
-          setToast(true);
-        }}
-      >
-        클릭
-      </button>
       <ArriveButton onClick={handleClickArriveBtn}>목적지 도착</ArriveButton>
       {toast && <Toast message={message} setToast={setToast} />}
     </DriveContainer>
