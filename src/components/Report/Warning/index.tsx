@@ -9,7 +9,6 @@ import { ReportCautionType } from "src/types/report";
 
 export const Warning = () => {
   const [warning, setWarning] = useState<ScenarioType[]>([]);
-  let counts = [1, 1, 1, 1];
   const [detail, setDetail] = useState<ReportCautionType>({
     internalSummaries: [],
     externalSummaries: [],
@@ -20,7 +19,6 @@ export const Warning = () => {
     response.then((res) => {
       if (res?.topRisks) {
         setWarning(res.topRisks);
-        counts = warning.map((scenario) => scenario.scenarioCount);
       }
     });
   }, []);
@@ -40,7 +38,7 @@ export const Warning = () => {
       </styles.WarningHeader>
       <styles.DoughnutContents>
         <styles.DoughnutChartContainer>
-          <DoughnutChart counts={counts} />
+          <DoughnutChart warning={warning} />
         </styles.DoughnutChartContainer>
         <styles.DoughnutItems>
           <styles.DoughnutItem>
