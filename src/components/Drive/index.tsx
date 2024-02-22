@@ -38,7 +38,8 @@ export const Drive = () => {
       eventSource.addEventListener("sse", function (event: any) {
         console.log("sse sucess");
         console.log(event.data);
-        if (event?.data) setMessage(messages[event?.data]);
+        const id = event?.data || 0;
+        setMessage(messages[id]);
         setToast(true);
       });
     } catch {}
