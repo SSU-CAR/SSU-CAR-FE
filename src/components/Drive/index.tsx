@@ -44,6 +44,9 @@ export const Drive = () => {
 
   useEffect(() => {
     fetchSSE();
+    return () => {
+      eventSource.close();
+    };
   }, []);
 
   return (
