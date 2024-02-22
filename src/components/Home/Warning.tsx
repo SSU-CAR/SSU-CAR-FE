@@ -25,7 +25,8 @@ export const Warning = () => {
         {data?.map((el, idx) => {
           return (
             <WarningItem key={el.scenarioType}>
-              {`${idx}. ${el.scenarioName}`} <span>{el.scenarioCount}번</span>
+              {`${idx + 1}. ${el.scenarioName}`}{" "}
+              <span>{el.scenarioCount}번</span>
             </WarningItem>
           );
         })}

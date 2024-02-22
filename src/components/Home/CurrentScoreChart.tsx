@@ -50,7 +50,7 @@ interface CurrentScoreChartProps {
   scoresData: LatestScoresType | undefined;
 }
 export const CurrentScoreChart = ({ scoresData }: CurrentScoreChartProps) => {
-  const scores = scoresData?.latestScores?.map((el) => el.score);
+  const scores = scoresData?.scores?.map((el) => el.score);
   const data = {
     labels,
     datasets: [

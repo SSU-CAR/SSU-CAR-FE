@@ -5,7 +5,7 @@ interface ScoreType {
   score: number;
 }
 export interface LatestScoresType {
-  latestScores: ScoreType[];
+  scores: ScoreType[];
 }
 
 export interface HomeRecentType {
