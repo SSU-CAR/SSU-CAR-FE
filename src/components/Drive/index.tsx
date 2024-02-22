@@ -35,7 +35,6 @@ export const Drive = () => {
   const fetchSSE = async () => {
     try {
       eventSource = new EventSource("/driving/events");
-      eventSource = new EventSource("/driving/events");
       eventSource.onmessage = async (event: any) => {
         const response = await event.data;
         const parsed = JSON.parse(response);
