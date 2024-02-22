@@ -10,7 +10,7 @@ export const Drive = () => {
   const [message, setMessage] = useState<string>("졸음 운전이 감지되었습니다");
 
   const messages = {
-    1: "졸음 운전이 감지되었습니다",
+    1: "전방 주시 태만이 감지되었습니다",
     2: "핸드폰 사용이 감지되었습니다",
     3: "졸음 운전이 감지되었습니다",
     51: "방향지시등 없이 차선변경이 감지되었습니다",
@@ -41,6 +41,7 @@ export const Drive = () => {
         const parsed = JSON.parse(response);
         console.log(parsed);
         console.log("sse success");
+        setMessage(messages[1]);
         setToast(true);
       };
       eventSource.onerror = async (event: any) => {
