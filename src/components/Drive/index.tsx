@@ -37,7 +37,6 @@ export const Drive = () => {
       };
       eventSource.onerror = async (event: any) => {
         console.error("sse error", event);
-        eventSource.close();
       };
     } catch {}
   };
