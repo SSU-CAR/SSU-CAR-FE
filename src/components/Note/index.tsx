@@ -11,7 +11,7 @@ export const Note = () => {
   useEffect(() => {
     const response = historyAPI();
     response.then((res) => {
-      setData(res);
+      setData(res.reverse());
     });
   }, []);
 
