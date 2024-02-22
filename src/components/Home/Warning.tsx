@@ -37,7 +37,7 @@ export const Warning = () => {
 
 const WarningContainer = styled.div`
   width: 100%;
-  height: 360px;
+  height: 450px;
   margin-top: 6px;
   background-color: white;
 
