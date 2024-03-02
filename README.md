@@ -1,9 +1,15 @@
 # 안전운전 피드백 서비스
 ### 🚘 현대모비스 2024 Mobility SW HACKATHON 
 > **2024.01.18~2024.02.23**
-> 
-> Frontend [@jwo0o0](https://github.com/jwo0o0) Backend [@0woogie](https://github.com/0woogie) [@Seohyun Back](https://github.com/Seohyun-Back) Embedded[
-@byungjikim](https://github.com/byungjikim)
+
+
+## 👥 팀 소개
+|![김정우](https://github.com/jwo0o0.png)|![맹영욱](https://github.com/0woogie.png)|![백서현](https://github.com/Seohyun-Back.png)|![김병지](https://github.com/byungjikim.png)|
+|:--:|:--:|:--:|:--:|
+|[김정우](https://github.com/jwo0o0)|[맹영욱](https://github.com/0woogie)|[백서현](https://github.com/Seohyun-Back)|[김병지](https://github.com/byungjikim)|
+|Frontend|Backend|Backend|Embedded|
+
+
 
 ## 📌 프로젝트 소개
 
@@ -13,7 +19,7 @@
 
 차량 센서와 내부 카메라로 <b>차량 내/외부의 위험한 운전 상황과 운전자 자세 (e.g. 실선에서의 차선변경, 전방 주시 태만 등)를 감지</b>한다. <br>
 이 데이터를 바탕으로 <b>운전 점수를 산정하고, 주행 리포트를 제공</b>한다. <br>
-추가적으로 다양한 운전 배지 획득을 통해 안전 운전에 대한 성취감과 동기 부여를 제공하는 모바일 웹 서비스를 기획했다. 
+추가적으로 다양한 운전 배지 획득을 통해 안전 운전에 대한 성취감과 동기 부여를 제공하는 모바일 웹 서비스를 구현하였다.
 
 <img width="600" alt="img1" src="https://github.com/SSU-CAR/.github/assets/70098708/44b829cc-cd47-434a-b9f5-b22f7da318bf">
 
@@ -49,13 +55,14 @@ https://github.com/SSU-CAR/.github/assets/70098708/da9842e9-05d1-4aa0-b273-bea88
 <img src="https://img.shields.io/badge/Typescript-3178C6?style=flat&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/chart.js-FF6384?style=flat&logo=chartdotjs&logoColor=white"/> <img src="https://img.shields.io/badge/Styled Components-DB7093?style=flat&logo=styled-components&logoColor=white"/> <img src="https://img.shields.io/badge/S3-569A31?style=flat&logo=amazons3&logoColor=white"/>
 <img src="https://img.shields.io/badge/GithubActions-2088FF?style=flat&logo=githubactions&logoColor=white"/> 
 ### Back
+<img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=flat&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/spring-%236DB33F.svg?style=flat&logo=spring&logoColor=white"/> <img src="https://img.shields.io/badge/mysql-%2300f.svg?style=flat&logo=mysql&logoColor=white"/> <img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=flat&logo=amazon-aws&logoColor=white"/> <img src="https://img.shields.io/badge/Postman-FF6C37?style=flat&logo=postman&logoColor=white"/> <img src="https://img.shields.io/badge/GithubActions-2088FF?style=flat&logo=githubactions&logoColor=white"/> 
+
 
 ### Embedded
 ![ROS2](https://img.shields.io/badge/ros-foxy-444444?style=flat&logo=ros)
 ![Python](https://img.shields.io/badge/Python-444444?style=flat&logo=Python)
 ![Docker](https://img.shields.io/badge/Docker-444444?style=flat&logo=Docker)
 ![C++](https://img.shields.io/badge/C++-444444?style=flat&logo=c%2B%2B)
-![Python](https://img.shields.io/badge/Python-444444?style=flat&logo=Python)
 
 ## 🧐 상황 판단 알고리즘 구현
 #### Detail information in this link: [Here](https://github.com/SSU-CAR/SSU-CAR_Embeded)
@@ -69,6 +76,3 @@ DrivenDist - Report driving distance and current veloicity.
 Joystick_usb - Control RC car with joystick.  
 LaeDetection, lane_ex - Lane detetction with HSV(HSL) filtering.  
 <img width="600" alt="img1" src="https://github.com/SSU-CAR/SSU-CAR_Embeded/assets/107911398/f5f10145-ed10-4ec9-9722-8f5671cca517">
-
-
-## 트러블 슈팅
